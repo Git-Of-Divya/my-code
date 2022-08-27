@@ -1,0 +1,23 @@
+<p>edit-user works!</p>
+<form action="/action_page.php">
+  <div class="container">
+
+    <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input [(ngModel)]="name" type="text" placeholder="Enter name" name="name" id="name" required>
+   {{name}}
+    <label for="email"><b>Email</b></label>
+    <input  [(ngModel)]="email" type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input  [(ngModel)]="password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <hr>
+
+    <button (click)="updateUser()" type="submit" class="registerbtn">Register</button>
+  </div>
+
+</form>
+
+

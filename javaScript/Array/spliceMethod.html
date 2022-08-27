@@ -1,0 +1,18 @@
+<head>
+    <title>Splice</title>
+</head>
+<h1>The splice() method adds new elements to an array at the desired place:</h1>
+
+<!-- The first parameter (2) defines the position where new elements should be added (spliced in).
+
+The second parameter (0) defines how many elements should be removed. -->
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+    const fruits = ["Mango","Grapes","Orange","Bnanana"];
+     document.getElementById("demo1").innerHTML = fruits;
+     fruits.splice(2,0,"Guava");
+     document.getElementById("demo2").innerHTML = fruits;
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <button onclick="sendRequest()">Send Ajax Request</button>
+
+    <script>
+        function sendRequest() {
+            alert()
+            var xhttp = new XMLHttpRequest();
+            // var api = "https://jsonplaceholder.typicode.com/todos";
+            var api = "https://prakritee.herokuapp.com/product/product-list";
+            xhttp.open("GET", api, true);
+            xhttp.send();
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 201) {
+                    let data = xhttp.responseText;
+                    data = JSON.parse(data);
+
+                    console.log(data);
+
+                    document.write("<table border='1'width='100%'>");
+                    document.write("<tr>");
+                    document.write("<th>UserId</th>");
+                    document.write("<th>Product Name</th>");
+                    document.write("<th>Ctegory Name</th>");
+                    document.write("<th>Product Price</th>");
+                    document.write("</tr>");
+                    for (post of data) {
+                        document.write("<tr>");
+                        document.write("<td>" + post._id + "</td>");
+                        document.write("<td>" + post.productName + "</td>");
+                        document.write("<td>" + post.categoryName + "</td>");
+                        document.write("<td>" + post.productPrice + "</td>");
+                        // document.write("<td><button onclick='deleteRow(i)'>Delete</button></td>");
+                        document.write("<tr>");
+                    }
+                    document.write("</table>");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

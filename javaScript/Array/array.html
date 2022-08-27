@@ -1,0 +1,19 @@
+<head>
+    <title>Iteration</title>
+</head>
+<body>
+    <h1>Array iteration in js</h1><br>
+    <p id="demo"></p>
+
+    <script>
+        const flowers = ["rose", "lotus", "marigold"];
+
+        let Txt = "";
+        flowers.forEach(myFunction);
+        document.getElementById("demo").innerHTML = Txt;
+
+        function myFunction(value, index, Array) {
+            Txt += value + "<br>";
+        }
+    </script>
+</body>
